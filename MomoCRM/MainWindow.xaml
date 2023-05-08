@@ -1,0 +1,179 @@
+﻿<Window x:Class="MomoCRM.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MomoCRM"
+        mc:Ignorable="d"
+        Title="Startup" Height="720" Width="1280"
+        WindowStyle="None" ResizeMode="NoResize" WindowStartupLocation="CenterScreen"
+        Background="Transparent" AllowsTransparency="True" x:Name="Main" Icon="/Img/Ico.png">
+    <Border Background="#3D5A80" CornerRadius="15" >
+        <Grid Loaded="Grid_Loaded">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="80"/>
+                <RowDefinition></RowDefinition>
+            </Grid.RowDefinitions>
+
+            <Grid Grid.Row="0">
+                <Border CornerRadius="15" Background="#98C1D9" Margin="8" />
+                <Image Source="Img/shut.png" HorizontalAlignment="Right" Margin="0,0,20,0" Height="30" Cursor="Hand" MouseLeftButtonDown="Image_MouseLeftButtonDown"/>
+                <Image Source="Img/acc.png" HorizontalAlignment="Right" Margin="0,0,60,0" Height="25" Cursor="Hand" MouseLeftButtonDown="Image_MouseLeftButtonDown_1" />
+                <Image Source="Img/logo.png" HorizontalAlignment="Left" Margin="120,0,0,0" Width="63"/>
+                <Border CornerRadius="15" Background="#EDF2F4" Width="510" Height="40" >
+                    <TextBox Background="Transparent" BorderBrush="#EDF2F4"  Width="480" Height="31" Cursor="IBeam" FontSize="18"/>
+                </Border>
+                <Image Source="Img/ser.png" HorizontalAlignment="Left" Margin="907,0,0,0" Height="30"/>
+            </Grid>
+
+            <Grid Grid.Row="1" Margin="4">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="2*"/>
+                </Grid.ColumnDefinitions>
+
+                <Border Grid.Column="0" CornerRadius="15" Background="#9e0031" Margin="4">
+                    <Grid>
+                        <TextBlock Text="SVZE CRM" HorizontalAlignment="Center" FontSize="25" Foreground="#EDF2F4" FontWeight="Bold" Margin="0,50,0,0">
+                            <TextBlock.Effect>
+                                <DropShadowEffect BlurRadius="19" Color="White" Direction="270" Opacity="0.5" ShadowDepth="4" />
+                            </TextBlock.Effect>
+                        </TextBlock>
+                        <StackPanel Cursor="Hand" HorizontalAlignment="Center">
+                            <TextBlock Text="User Management" FontSize="18" Foreground="#EDF2F4" x:Name="usmng"
+                                       Margin="0,190,0,0" FontWeight="Bold" MouseLeftButtonDown="usmng_MouseLeftButtonDown"/>
+                            <TextBlock Text="Customer Management" FontSize="18" Foreground="#EDF2F4" x:Name="cusmng"
+                                       Margin="0,20,0,0" FontWeight="Bold" MouseLeftButtonDown="cusmng_MouseLeftButtonDown_1" />
+                            <TextBlock Text="Product Management" FontSize="18" Foreground="#EDF2F4" x:Name="prodmng"
+                                       Margin="0,20,0,0" FontWeight="Bold" MouseLeftButtonDown="prodmng_MouseLeftButtonDown"/>
+                            <TextBlock Text="Invoices" FontSize="18" Foreground="#EDF2F4" x:Name="invoice"
+                                       Margin="0,20,0,0" FontWeight="Bold" MouseLeftButtonDown="invoice_MouseLeftButtonDown"/>
+                            <TextBlock Text="Activities" FontSize="18" Foreground="#EDF2F4" x:Name="activity"
+                                       Margin="0,20,0,0" FontWeight="Bold" MouseLeftButtonDown="activity_MouseLeftButtonDown"/>
+                            <TextBlock Text="Reminders" FontSize="18" Foreground="#EDF2F4" x:Name="Reminders"
+                                       Margin="0,20,0,0" FontWeight="Bold" MouseLeftButtonDown="Reminders_MouseLeftButtonDown"/>
+                            <TextBlock Text="Email Panel" FontSize="18" Foreground="#EDF2F4" x:Name="smsPanl"
+                                       Margin="0,20,0,0" FontWeight="Bold" MouseLeftButtonDown="smsPanl_MouseLeftButtonDown"/>
+                            <TextBlock Text="Reports" FontSize="18" Foreground="#EDF2F4" x:Name="Reports"
+                                       Margin="0,20,0,0" FontWeight="Bold" MouseLeftButtonDown="Reports_MouseLeftButtonDown"/>
+                            
+                        </StackPanel>
+                        <StackPanel HorizontalAlignment="Left" Margin="20,0,0,0">
+                            <Image Source="Img/cusmng.png" Width="24" Margin="0,190,0,0" />
+                            <Image Source="Img/cust.png" Width="24" Margin="0,20,0,0" />
+                            <Image Source="Img/pro.png" Width="24" Margin="0,20,0,0" />
+                            <Image Source="Img/rece.png" Width="24" Margin="0,20,0,0" />
+                            <Image Source="Img/act.png" Width="24" Margin="0,20,0,0" />
+                            <Image Source="Img/remnd.png" Width="24" Margin="0,20,0,0" />
+                            <Image Source="Img/email.png" Width="24" Margin="0,20,0,0" />
+                            <Image Source="Img/rep.png" Width="24" Margin="0,20,0,0" />
+                        </StackPanel>
+                    </Grid>
+                </Border>
+
+                <Grid Grid.Column="1">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="200"/>
+                        <RowDefinition/>
+                        <RowDefinition Height="60"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+
+                    <Border Cursor="Hand" Grid.Row="0" Grid.Column="0" CornerRadius="15" Background="#293241" Margin="4" MouseLeftButtonDown="Border_MouseLeftButtonDown" >
+                        <Grid>
+                            <TextBlock Foreground="#EDF2F4" Text="Welcome" FontSize="25" FontWeight="Bold"
+                                       VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0,20,0,0"/>
+                            <TextBlock x:Name="uservalue" Foreground="#EDF2F4" FontSize="25" FontWeight="Bold"
+                                       VerticalAlignment="Top" TextAlignment="Center" Margin="0,55,0,0" Width="290"/>
+                            <TextBlock Foreground="#EDF2F4" Text="Total Reminders" FontSize="15" FontWeight="Bold"
+                                       VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0,110,0,0"/>
+                            <TextBlock x:Name="RemValue" Foreground="#EDF2F4" Text="254" FontSize="30" FontWeight="Bold" 
+                                       VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0,132,-50,0"/>
+                            <Image Source="Img/nalrm.png"  Width="30" Margin="60,120,130,0"/>
+
+                        </Grid>
+                    </Border>
+
+                    <Border Grid.Row="1" Grid.Column="0" CornerRadius="15" Background="#EDF2F4" Margin="4" >
+                        <Grid Margin="25">
+                            <Viewbox>
+                                <Calendar HorizontalAlignment="Center" VerticalAlignment="Center"  FontSize="20"/>
+                            </Viewbox>
+                        </Grid>
+                    </Border>
+
+                    <Border Grid.Row="2" Grid.Column="0" CornerRadius="15" Background="#EDF2F4" Margin="4" >
+                        <Grid>
+                            <local:ClockWidget></local:ClockWidget>
+                        </Grid>
+                    </Border>
+
+                </Grid>
+
+                <Grid Grid.Column="2">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="200"/>
+                        <RowDefinition Height="50"/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <Border Cursor="Hand" Grid.Row="0" Grid.Column="0" CornerRadius="15" 
+                            Background="#EDF2F4" Margin="4" >
+                        <Grid>
+                            <TextBlock Foreground="#293241" Text="Current Sells" FontSize="25" FontWeight="Bold"
+                                       VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0,50,0,0"/>
+                            <TextBlock x:Name="invValue" Foreground="#293241" Text="254" FontSize="40" FontWeight="Bold" 
+                                       VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0,90,-50,0"/>
+                            <Image Source="Img/sell.png"  Width="45" Margin="40,40,130,0"/>
+                        </Grid>
+                    </Border>
+
+                    <Border  Cursor="Hand" Grid.Row="0" Grid.Column="1" CornerRadius="15" Background="#EDF2F4" Margin="4" >
+                        <Grid>
+                            <TextBlock Foreground="#293241" Text="Customers" FontSize="25" FontWeight="Bold"
+                                       VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0,50,0,0"/>
+                            <TextBlock Foreground="#293241" Text="Total" FontSize="15" FontWeight="Bold"
+                                       VerticalAlignment="Top" HorizontalAlignment="Center" Margin="20,80,0,0"/>
+                            <TextBlock x:Name="CusValue" Foreground="#293241" Text="25" FontSize="40" FontWeight="Bold" 
+                                       VerticalAlignment="Top" HorizontalAlignment="Left" Margin="148,90,0,0" Width="145"/>
+                            <TextBlock Foreground="#293241" Text="Active" FontSize="15" FontWeight="Bold"
+                                       VerticalAlignment="Top" HorizontalAlignment="Center" Margin="-90,145,0,0"/>
+                            <TextBlock x:Name="actCus" Foreground="#293241" Text="5" FontSize="30" FontWeight="Bold"
+                                       VerticalAlignment="Top" HorizontalAlignment="Left" Margin="148,132,0,0" Width="145"/>
+                            <Image Source="Img/ncus.png"  Width="45" Margin="40,40,130,0"/>
+                        </Grid>
+                    </Border >
+
+                    <Border Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2"
+                            CornerRadius="15" Background="#293241" Margin="4" >
+                        <TextBlock Grid.Row="0" Foreground="#EDF2F4" Text="Today Reminders:" FontSize="22" FontWeight="Bold"
+                                       VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                    </Border>
+                    <Border Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" Padding="20"
+                            CornerRadius="15" Background="#293241" Margin="4" x:Name="remBord">
+                        <Grid x:Name="RemGrid">
+                            <Grid.RowDefinitions>
+                                <RowDefinition/>
+                                <RowDefinition/>
+                                <RowDefinition/>
+                                <RowDefinition/>
+                                <RowDefinition/>
+                                <RowDefinition/>
+                             
+                            </Grid.RowDefinitions>
+                            
+                        </Grid>
+                    </Border>
+
+                </Grid>
+            </Grid>
+
+        </Grid>
+    </Border>
+</Window>

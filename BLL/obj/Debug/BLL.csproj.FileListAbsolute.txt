@@ -1,0 +1,15 @@
+C:\Users\Savize\source\repos\MomoCRM\BLL\bin\Debug\BLL.dll
+C:\Users\Savize\source\repos\MomoCRM\BLL\bin\Debug\BLL.pdb
+C:\Users\Savize\source\repos\MomoCRM\BLL\bin\Debug\BusEntity.dll
+C:\Users\Savize\source\repos\MomoCRM\BLL\bin\Debug\DAL.dll
+C:\Users\Savize\source\repos\MomoCRM\BLL\bin\Debug\EntityFramework.dll
+C:\Users\Savize\source\repos\MomoCRM\BLL\bin\Debug\BusEntity.pdb
+C:\Users\Savize\source\repos\MomoCRM\BLL\bin\Debug\DAL.pdb
+C:\Users\Savize\source\repos\MomoCRM\BLL\bin\Debug\DAL.dll.config
+C:\Users\Savize\source\repos\MomoCRM\BLL\bin\Debug\EntityFramework.xml
+C:\Users\Savize\source\repos\MomoCRM\BLL\obj\Debug\BLL.csproj.AssemblyReference.cache
+C:\Users\Savize\source\repos\MomoCRM\BLL\obj\Debug\BLL.csproj.CoreCompileInputs.cache
+C:\Users\Savize\source\repos\MomoCRM\BLL\obj\Debug\BLL.csproj.CopyComplete
+C:\Users\Savize\source\repos\MomoCRM\BLL\obj\Debug\BLL.dll
+C:\Users\Savize\source\repos\MomoCRM\BLL\obj\Debug\BLL.pdb
+C:\Users\Savize\source\repos\MomoCRM\BLL\bin\Debug\BLL.dll.config

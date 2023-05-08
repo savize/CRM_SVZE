@@ -1,0 +1,6 @@
+C:\Users\Savize\source\repos\MomoCRM\BusEntity\bin\Debug\BusEntity.dll
+C:\Users\Savize\source\repos\MomoCRM\BusEntity\bin\Debug\BusEntity.pdb
+C:\Users\Savize\source\repos\MomoCRM\BusEntity\obj\Debug\BusEntity.csproj.AssemblyReference.cache
+C:\Users\Savize\source\repos\MomoCRM\BusEntity\obj\Debug\BusEntity.csproj.CoreCompileInputs.cache
+C:\Users\Savize\source\repos\MomoCRM\BusEntity\obj\Debug\BusEntity.dll
+C:\Users\Savize\source\repos\MomoCRM\BusEntity\obj\Debug\BusEntity.pdb
