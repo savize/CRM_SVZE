@@ -42,7 +42,7 @@ namespace DAL
         public DataTable Read()
         {
             string cmd = "SELECT Id, CusName AS [Customer Name], Phone, RegDate AS [Registration Date], status\r\nFROM     dbo.Customers";
-            SqlConnection conn = new SqlConnection("Data Source=.;Initial Catalog=MomoCRM;Integrated Security=true");
+            SqlConnection conn = new SqlConnection("Server=localhost\\SQLEXPRESS;Database=MomoCRM;Trusted_Connection=True;");
             var sqladapter = new SqlDataAdapter(cmd, conn);
             var commandbuilder = new SqlCommandBuilder(sqladapter);
             var ds = new DataSet();
@@ -53,7 +53,7 @@ namespace DAL
         public DataTable ReadAct()
         {
             string cmd = "SELECT Id, CusName AS [Customer Name], Phone, RegDate AS [Registration Date], status\r\nFROM     dbo.Customers\r\nWHERE  (status = 1)";
-            SqlConnection conn = new SqlConnection("Data Source=.;Initial Catalog=MomoCRM;Integrated Security=true");
+            SqlConnection conn = new SqlConnection("Server=localhost\\SQLEXPRESS;Database=MomoCRM;Trusted_Connection=True;");
             var sqladapter = new SqlDataAdapter(cmd, conn);
             var commandbuilder = new SqlCommandBuilder(sqladapter);
             var ds = new DataSet();
@@ -65,7 +65,7 @@ namespace DAL
         {
             string cmd = "SELECT Id, CusName AS [Customer Name], Phone, RegDate AS [Registration Date], status\r\nFROM     dbo.Customers WHERE ((Phone like '%'+ @search + '%') or (CusName like '%'+ @search + '%'))";
             SqlCommand sqcomn = new SqlCommand(cmd);
-            SqlConnection conn = new SqlConnection("Data Source=.;Initial Catalog=MomoCRM;Integrated Security=true");
+            SqlConnection conn = new SqlConnection("Server=localhost\\SQLEXPRESS;Database=MomoCRM;Trusted_Connection=True;");
 
             sqcomn.Connection = conn;
             sqcomn.CommandType = CommandType.Text;

@@ -43,7 +43,7 @@ namespace DAL
         public DataTable Read()
         {
             string cmd = "SELECT Id, Name AS [Item Name], Price AS [Item Price], Stock AS [Item Quantity]\r\nFROM     dbo.Products";
-            SqlConnection con = new SqlConnection("Data Source=.;Initial Catalog=MomoCRM;Integrated Security=true");
+            SqlConnection con = new SqlConnection("Server=localhost\\SQLEXPRESS;Database=MomoCRM;Trusted_Connection=True;;");
             var sqladapter = new SqlDataAdapter(cmd, con);
             var commandbuilder = new SqlCommandBuilder(sqladapter);
             var ds = new DataSet();
@@ -55,7 +55,7 @@ namespace DAL
         {
             string cmd = "SELECT Id, Name AS [Item Name], Price AS [Item Price], Stock AS [Item Quantity]\r\nFROM     dbo.Products WHERE Name like '%'+ @search + '%'";
             SqlCommand sqcomn = new SqlCommand(cmd);
-            SqlConnection conn = new SqlConnection("Data Source=.;Initial Catalog=MomoCRM;Integrated Security=true");
+            SqlConnection conn = new SqlConnection("Server=localhost\\SQLEXPRESS;Database=MomoCRM;Trusted_Connection=True;");
 
             sqcomn.Connection = conn;
             sqcomn.CommandType = CommandType.Text;

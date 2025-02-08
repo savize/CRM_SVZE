@@ -23,7 +23,7 @@ namespace DAL
         public DataTable Read()
         {
             string cmd = "SELECT Id, CatName AS [Category Name]\r\nFROM     dbo.ActivityCategories";
-            SqlConnection conn = new SqlConnection("Data Source=.;Initial Catalog=MomoCRM;Integrated Security=true");
+            SqlConnection conn = new SqlConnection("Server=localhost\\SQLEXPRESS;Database=MomoCRM;Trusted_Connection=True;");
             var sqladapter = new SqlDataAdapter(cmd, conn);
             var commandbuilder = new SqlCommandBuilder(sqladapter);
             var ds = new DataSet();

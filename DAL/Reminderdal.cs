@@ -33,7 +33,8 @@ namespace DAL
         public DataTable read()
         {
             string cmd = "SELECT dbo.Reminders.Title, dbo.Reminders.Description, dbo.Reminders.RemindDate AS [To Remind on], dbo.Reminders.Status, dbo.Users.Username AS [Related to], dbo.Reminders.RegDate AS [Creation Date], dbo.Reminders.Id, \r\n                  dbo.Reminders.user_Id, dbo.Users.Id AS Expr1\r\nFROM     dbo.Reminders INNER JOIN\r\n                  dbo.Users ON dbo.Reminders.user_Id = dbo.Users.Id";
-            SqlConnection conn = new SqlConnection("Data Source=.;Initial Catalog=MomoCRM;Integrated Security=true");
+            SqlConnection conn = new SqlConnection("Server=localhost\\SQLEXPRESS;Database=MomoCRM;Trusted_Connection=True;");
+            
             var sqladapter = new SqlDataAdapter(cmd, conn);
             var commandbuilder = new SqlCommandBuilder(sqladapter);
             var ds = new DataSet();
@@ -50,7 +51,7 @@ namespace DAL
         {
             string cmd = "FROM     dbo.Reminders INNER JOIN\r\n                  dbo.Users ON dbo.Reminders.user_Id = dbo.Users.Id\r\nWHERE  (dbo.Reminders.Title like '%'+ @Search +'%') or (dbo.Users.Username like '%'+ @Search +'%') or (dbo.Reminders.Description like '%'+ @Search +'%')\r\n";
             SqlCommand sqcomn = new SqlCommand(cmd);
-            SqlConnection conn = new SqlConnection("Data Source=.;Initial Catalog=MomoCRM;Integrated Security=true");
+            SqlConnection conn = new SqlConnection("Server=localhost\\SQLEXPRESS;Database=MomoCRM;Trusted_Connection=True;");
 
             sqcomn.Connection = conn;
             sqcomn.CommandType = CommandType.Text;

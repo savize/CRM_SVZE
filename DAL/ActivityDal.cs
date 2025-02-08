@@ -37,7 +37,7 @@ namespace DAL
         public DataTable read()
         {
             string cmd = "SELECT dbo.Activities.Id, dbo.ActivityCategories.CatName AS Category, dbo.Activities.Title, dbo.Activities.Description, dbo.Users.Username AS [User], dbo.Customers.CusName AS Customer, dbo.Activities.date AS Date\r\nFROM     dbo.Activities INNER JOIN\r\n                  dbo.ActivityCategories ON dbo.Activities.Category_Id = dbo.ActivityCategories.Id INNER JOIN\r\n                  dbo.Customers ON dbo.Activities.Customer_Id = dbo.Customers.Id INNER JOIN\r\n                  dbo.Users ON dbo.Activities.User_Id = dbo.Users.Id";
-            SqlConnection con = new SqlConnection("Data Source=.;Initial Catalog=MomoCRM;Integrated Security=true");
+            SqlConnection con = new SqlConnection("Server=localhost\\SQLEXPRESS;Database=MomoCRM;Trusted_Connection=True;");
             var sqladapter = new SqlDataAdapter(cmd, con);
             var commandbuilder = new SqlCommandBuilder(sqladapter);
             var ds = new DataSet();
@@ -54,7 +54,7 @@ namespace DAL
         {
             string cmd = "SELECT dbo.Activities.Id, dbo.ActivityCategories.CatName AS Category, dbo.Activities.Title, dbo.Activities.Description, dbo.Users.Username AS [User], dbo.Customers.CusName AS Customer, dbo.Activities.date AS Date\r\nFROM     dbo.Activities INNER JOIN\r\n                  dbo.ActivityCategories ON dbo.Activities.Category_Id = dbo.ActivityCategories.Id INNER JOIN\r\n                  dbo.Customers ON dbo.Activities.Customer_Id = dbo.Customers.Id INNER JOIN\r\n                  dbo.Users ON dbo.Activities.User_Id = dbo.Users.Id\r\nWHERE  (dbo.Customers.CusName like '%' + @Search + '%') or (dbo.Users.Username like '%' +@Search + '%') or (dbo.Activities.Title like '%' +@Search + '%') or (dbo.ActivityCategories.CatName like '%' +@Search + '%')";
             SqlCommand sqcomn = new SqlCommand(cmd);
-            SqlConnection conn = new SqlConnection("Data Source=.;Initial Catalog=MomoCRM;Integrated Security=true");
+            SqlConnection conn = new SqlConnection("Server=localhost\\SQLEXPRESS;Database=MomoCRM;Trusted_Connection=True;");
 
             sqcomn.Connection = conn;
             sqcomn.CommandType = CommandType.Text;

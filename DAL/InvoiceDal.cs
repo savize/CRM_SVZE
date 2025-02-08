@@ -41,7 +41,7 @@ namespace DAL
         public DataTable Read()
         {
             string cmd = "SELECT dbo.Invoices.Id , dbo.Invoices.InvNumber AS [Invoice Number], dbo.Invoices.RegDate AS Issue, dbo.Customers.CusName AS Customer, dbo.Users.Username AS Seller, dbo.Invoices.TotalPrice AS [Total Price], dbo.Invoices.Status, dbo.Invoices.ChckoutDate AS [Check Out], dbo.Users.Name\r\nFROM     dbo.Invoices INNER JOIN\r\n                  dbo.Customers ON dbo.Invoices.Customer_Id = dbo.Customers.Id INNER JOIN\r\n                  dbo.Users ON dbo.Invoices.User_Id = dbo.Users.Id";
-            SqlConnection conn = new SqlConnection("Data Source=.;Initial Catalog=MomoCRM;Integrated Security=true");
+            SqlConnection conn = new SqlConnection("Server=localhost\\SQLEXPRESS;Database=MomoCRM;Trusted_Connection=True;");
             var sqladapter = new SqlDataAdapter(cmd, conn);
             var commandbuilder = new SqlCommandBuilder(sqladapter);
             var ds = new DataSet();
@@ -53,7 +53,7 @@ namespace DAL
         {
             string cmd = "SELECT dbo.Invoices.Id , dbo.Invoices.InvNumber AS [Invoice Number], dbo.Invoices.RegDate AS Issue, dbo.Customers.CusName AS Customer, dbo.Users.Username AS Seller, dbo.Invoices.TotalPrice AS [Total Price], dbo.Invoices.Status, dbo.Invoices.ChckoutDate AS [Check Out], dbo.Users.Name\r\nFROM     dbo.Invoices INNER JOIN\r\n                  dbo.Customers ON dbo.Invoices.Customer_Id = dbo.Customers.Id INNER JOIN\r\n                  dbo.Users ON dbo.Invoices.User_Id = dbo.Users.Id WHERE ((CusName like '%'+ @search + '%') or (Username like '%'+ @search + '%') or (InvNumber like '%'+ @search + '%'))\r\n";
             SqlCommand sqcomn = new SqlCommand(cmd);
-            SqlConnection conn = new SqlConnection("Data Source=.;Initial Catalog=MomoCRM;Integrated Security=true");
+            SqlConnection conn = new SqlConnection("Server=localhost\\SQLEXPRESS;Database=MomoCRM;Trusted_Connection=True;");
 
             sqcomn.Connection = conn;
             sqcomn.CommandType = CommandType.Text;
